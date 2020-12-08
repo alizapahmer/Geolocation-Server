@@ -19,6 +19,7 @@ const popular_search = (req,res)=>{
 const find_dest = (req,res)=>{
      //parse the source and dest from the URL
      //sort the values so we can track source-destination in both directions
+    //change the values to uppercase so it is not case-sensative
     let combination = [((req.params.source).toUpperCase()), ((req.params.dest).toUpperCase())].sort()
     source = combination[0];
     dest = combination[1];
