@@ -24,9 +24,18 @@ app.get('/hello', (req, res) => {
     res.send(res.statusCode)
 });
 
-//API #3, health API
+
+//API #3, health API, uses npm health check to monitor 
 app.get('/health',(req,res)=>{
-     mongoose.connection.on('error', function(err) {
-        if(err) throw err;
-        });
-    })  
+healthCheckMongodb.do({
+   url:dbURI
+ })
+   .then(response => {
+     if (response.health == false){
+        console.log("got here") 
+        res.status(500) 
+        res.send(500) 
+     }
+     res.end() 
+   })
+})
