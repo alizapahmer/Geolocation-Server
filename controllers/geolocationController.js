@@ -54,9 +54,11 @@ const find_dest = (req,res)=>{
             }
         res.send({'distance': distance});
         }).catch((err)=>{
-            res.send(err, ' error: location not found, please try again')
+            res.send(' error: location not found, please try again')
         }) 
         }
+    }).catch((err)=>{
+        res.send('err');
     })
 };
 
