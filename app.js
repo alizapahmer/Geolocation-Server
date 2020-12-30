@@ -10,7 +10,7 @@ app.set('view engine', 'ejs');
 
 
 //connection link to database
-const dbURI = 'mongodb+srv://aliza_aron:ALpa3006@cluster0.tt8n8.mongodb.net/geolocation?retryWrites=true&w=majority';
+const dbURI = 'mongodb+srv://aliza_aron:PASSWORD@cluster0.tt8n8.mongodb.net/geolocation?retryWrites=true&w=majority';
 
 //connect to Database
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology:true})
